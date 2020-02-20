@@ -1,7 +1,7 @@
 FROM php:7.3-apache
-WORKDIR "/var/www"
+WORKDIR /var/www
 
-MAINTAINER Jeffrey Santoso <jeffrey.k.santoso@gmail.com>
+LABEL maintainer="Jeffrey Santoso <jeffrey.k.santoso@gmail.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=UTC
@@ -74,6 +74,6 @@ RUN ln -s /etc/apache2/sites-available/site.conf /etc/apache2/sites-enabled/site
 
 EXPOSE 80
 
-WORKDIR "/var/www"
+WORKDIR /var/www
 VOLUME ["/var/www"]
 USER root
