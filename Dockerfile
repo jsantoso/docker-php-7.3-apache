@@ -76,4 +76,3 @@ EXPOSE 80
 
 WORKDIR /var/www
 VOLUME ["/var/www"]
-USER root
