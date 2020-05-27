@@ -25,6 +25,16 @@ if [ "$container_role" = "web" ]; then
 
     exec /usr/local/bin/apache2-foreground
 
+elif [ "$container_role" = "web_no_database" ]; then
+
+    echo "Running as web server with no database"
+
+    rm -rf /run/httpd/* /tmp/httpd*
+
+    cd /var/www && /usr/local/bin/composer install --no-interaction
+
+    exec /usr/local/bin/apache2-foreground
+	
 elif [ "$container_role" = "cli" ]; then
 
     echo "Running as CLI"
