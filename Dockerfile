@@ -89,7 +89,6 @@ RUN ln -s /etc/apache2/sites-available/site.conf /etc/apache2/sites-enabled/site
 EXPOSE 80
 
 WORKDIR /var/www
-VOLUME ["/var/www"]
 
 COPY start.sh /
 RUN chmod +x /start.sh
